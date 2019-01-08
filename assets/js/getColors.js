@@ -10,10 +10,9 @@ var getColors = (url) => {
     //appending request image to display div
     var img = $("<img>").attr("src", url).css("max-width", "100%").css("border-radius", "10px");
     $("#current-image").append(img);
-    $("#display").append($("<h1>")).text("sploading...");
+    $("#display").append($("<h1>")).text("loading...");
     var loadingImg = ($("<img>")).attr('src','https://www.blackmores.com.au/App_Themes/AU/images/loading.gif')
-    console.log(loadingImg)
-    //$("#display").append
+    $("#display").append(loadingImg)
     $("img").addClass('animated 5s fadeIn');
 
     //api request to google vision. This returns the response as visionResponse
