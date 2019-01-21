@@ -24,39 +24,17 @@ h3 {
 /* GLOBAL STYLES */
 html, body {
     background: transparent;
-    padding-top: 5em;
+    padding-top: 0;
     display: flex;
     justify-content: center;
     height: 100%;
     width: 100%;
-    animation: pulse 5s forwards;
-  }
-  
-  /* DEMO-SPECIFIC STYLES */
-  .typewriter h1 {
-    color:rgb(3, 3, 56);
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-      typing 3.5s steps(30, end),
-      blink-caret .5s step-end infinite;
-  }
-  
-  /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: grey }
-  }
+    animation: gradual 3s forwards;
+    margin-top: 0px;
+    margin:0; /*gets rid of white space around body*/
+    height:150vh;
+    position: relative; 
+   } 
 
 /* Background Animation */
 
@@ -67,14 +45,24 @@ html, body {
     top:0;
   }
    
-   @keyframes pulse {
+   @keyframes gradual {
     0% {
-      background-color:rgb(3, 3, 56);
+      background-color:#2A3132;
     }
     100% {
-      background-color: #FFFFFF 1s forwards;
+      background-color: #FFFFFF 3s forwards;
     }
   }  
+
+/*Animate.css*/
+#directions {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#userInput{
+    animation-delay: 6s;
+}
 
 /* LAYOUT CSS */
 .pure-img-responsive {
@@ -89,13 +77,16 @@ html, body {
 .header {
     text-align: center;
     top: auto;
-    margin: 3em auto;
+    margin: 2em auto;
 }
 
 .sidebar {
-    background:rgb(3, 3, 56);
+    background:#2A3132;
     color: #fff;
-    margin-right:10px;
+}
+
+.palette{
+    margin-right: 0px;
 }
 
 .brand-title,
@@ -107,7 +98,11 @@ html, body {
 }
 .brand-tagline {
     font-weight: 300;
-    color: rgb(176, 202, 219);
+    color:#90AFC5;
+}
+
+#sidebarText{
+    color:white;
 }
 
 .nav-list {
@@ -131,7 +126,7 @@ html, body {
 }
 .nav-item a:hover,
 .nav-item a:focus {
-    border: 2px solid rgb(61, 146, 201);
+    /* border: 2px solid rgb(61, 146, 201); */
     text-decoration: none;
 }
 
@@ -194,7 +189,7 @@ html, body {
     }
 
 .post-images {
-    margin: 1em 0;
+    margin: 0em 0;
 }
 .post-image-meta {
     margin-top: -3.5em;
@@ -203,9 +198,46 @@ html, body {
     text-shadow: 0 1px 1px #333;
 }
 
-.footer {
-    padding: 1em 0;
+button{
+    border-radius: 2px;
+    padding: 5px;
+    margin-left: 10px;
+    background-color: #90AFC5;
+    color: #2A3132;
+    animation-delay: 3s;
+    animation: fadeIn 2s forwards;
 }
+
+button:hover {
+    background-color: #336B87; /* blue */
+    color: white;
+    transition: all 0.4s ease 0s;
+  }
+
+#try{
+    font-weight: bold;
+    font-size: 18px;
+    animation: fadeIn 4s forwards;
+}
+
+#loadButton{
+    border-radius: 2px;
+    background-color: #90AFC5;
+    color: #2A3132;
+}
+
+#saveButton{
+    border-radius: 2px;
+    background-color: #90AFC5;
+    color: #2A3132;
+}
+
+#submitButton{
+    border-radius: 2px;
+    background-color: #90AFC5;
+    color: #2A3132;
+}
+
 .footer a {
     color: #ccc;
     font-size: 80%;
@@ -222,12 +254,13 @@ html, body {
     }
 
     .header {
-        margin: 80% 2em 0;
+        margin: 50px;
         text-align: right;
     }
 
     .sidebar {
         position: fixed;
+        height: 100%;
         top: 0;
         bottom: 0;
     }
@@ -235,13 +268,101 @@ html, body {
     .footer {
         text-align: center;
     }
-#sidebar{
-    background-color:#a4c9e2;
-    width:20%;
-    height: 100%;
-    float: left;
-}    
+}
+#current-image{
+    margin-bottom: -5px;
+}
+
 #feed-top{
     min-height:12em
 }
+
+
+
+/* opening animation  */
+.ani1 .ani2 .ani3 .ani4 {
+    opacity:0;
+}
+
+.ani1{
+    animation: fadeIn1 5s
+}
+
+.ani2{
+    animation:fadeIn2 5s
+}
+
+.ani3{
+    animation:fadeIn3 5s
+}
+
+.ani4{
+    animation:fadeIn4 5s    
+}
+
+.ani5{
+    animation:fadeIn5 5s    
+}
+
+@keyframes fadeIn1 {
+    0%{
+        opacity:0;
+    }
+    20%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+@keyframes fadeIn2 {
+    0%{
+        opacity:0;
+    }
+    40%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+
+@keyframes fadeIn3 {
+    0%{
+        opacity:0;
+    }
+    60%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+
+@keyframes fadeIn4 {
+    0%{
+        opacity:0;
+    }
+    70%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+
+@keyframes fadeIn5 {
+    0%{
+        opacity:0;
+    }
+    80%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
 }
